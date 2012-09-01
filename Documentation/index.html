@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>IE Alert! Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+
+		pre {
+			background-color: #333;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+			padding: 20px;
+			font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+			font-size:15px;
+			color: #30f91c;
+		}
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">IE Alert! plugin v2.0</h3>
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#about">About the plugin</a></li>
+			<li><a href="#howplugin">What the plugin does</a></li>
+			<li><a href="#start">Getting started</a></li>
+			<li><a href="#using">Using the plugin</a></li>
+			<li><a href="#options">Options</a></li>
+			<li><a href="#issues">Known issues</a></li>
+			<li><a href="#license">Credits, Source and License</a></li>
+		</ol>
+
+
+<hr>
+
+		<h3 id="about"><strong>A) About the plugin</strong> - <a href="#toc">top</a></h3>
+		<p>IE Alert is a handy jQuery plugin that shows a well designed modal box to the visitor who's trying to view your site with an older version of Internet Explorer browser, this modal box will convince your visitors to upgrade their browser to a newer version of Internet Explorer or to an another web browser.</p>
+		
+		<img src="assets/images/alert_window.jpg" alt="IE Alert" />
+		
+		<p>This message will appear if your visitor is using an older version of Internet Explorer</p>
+
+
+		<hr>
+
+		<h3 id="howplugin"><strong>B) What the plugin does</strong> - <a href="#toc">top</a></h3>
+
+		<p>The IE Alert plugin will show a modal box to the visitor who is trying to view your website with Internet Explorer browser. This modal box tries to convince them to upgrade to a newer version of Internet Explorer or to an another modern web browser. By clicking the Upgrade button a new window/tab will be opened where your visitor can download the new browser. The modal box contains a title text (can be modified, see <a href="#options">options</a>) a basic text (can be modified, see <a href="#options">options</a>) a close button and a Upgrade button (the upgrade text and the URL can be modified, see <a href="#options">options</a>).
+
+
+		</p>
+
+		<hr>
+		
+		<h3 id="start"><strong>C) Getting started</strong> - <a href="#toc">top</a></h3>
+
+		
+		<strong>Folder Structure</strong>
+
+		<p>When you unzip the downloaded file the folder structure looks the following:</p>
+
+<ul>
+<li>Documentation</li>
+<li>ThePlugin</li>
+</ul>
+<i>Documentation</i> - The documentation to the plugin.
+</br>
+<i>ThePlugin</i> - In the Plugin folder you can find the following files:
+<p></p>
+<ul>
+<li>iealert</li>
+<li>iealert.js</li>
+<li>iealert.min.js</li>
+</ul>
+<i>iealert</i> - In the iealert folder you can find 2 CSS files called style.css and style_dev.css and some images.
+</br>
+<i>iealert.js</i> - This is the plugin.
+</br>
+<i>iealert.min.js</i> - This is a minified version of the plugin.
+</br>
+</br>
+</br>
+<strong>First step</strong>
+<p>The first step is to include some <strong>required</strong> files into your HTML document.</p>
+<p>1.Include the latest <strong>jQuery library</strong> right after the closing &lt;/head> tag in your html document.</p>
+<a href="http://docs.jquery.com/Downloading_jQuery">Download jQuery from jquery.com</a><br />
+<a href="http://docs.jquery.com/How_jQuery_Works">How jQuery works</a><br /><br />
+<p>2.Include the minified <strong>IE Alert plugin (iealert.min.js)</strong> right after the already included jQuery Library.</p>
+<p>3.Include the <strong>style.css</strong> CSS file (which is in the iealert folder) right after the already included IE Alert plugin.
+Please note, that the style.css file must be in the same folder where the images are.</p>
+<br/>
+<p>A simple example how your HTML markup will look like if you include the required files:</p>
+
+<pre>
+&lt;!DOCTYPE html>
+&lt;html>
+ &lt;head>
+ &lt;meta charset="UTF-8">
+  &lt;title>TITLE&lt;/title>
+
+   &lt;script src="http://code.jquery.com/jquery-1.7.2.js" type="text/javascript">&lt;/script>
+   &lt;script src="iealert.min.js" type="text/javascript">&lt;/script>
+   &lt;link rel="stylesheet" type="text/css" href="iealert/style.css" />
+
+ &lt;/head>
+ &lt;body>
+  
+ &lt;/body>
+&lt;/html>
+</pre>
+	<hr>
+
+		<h3 id="using"><strong>D) Using the plugin</strong> - <a href="#toc">top</a></h3>
+
+		<p>If you included all the required files (see Getting started > First step) you only need to "call" the plugin. We "call" the plugin with this line:</p> 
+		<pre>
+$("body").iealert();</pre> 
+
+		<p>
+			Just copy this code and paste it into a jQuery $(document).ready() function. (more about the <a href="http://docs.jquery.com/Tutorials:Introducing_$(document).ready()">jQuery $(document).ready() function</a>)<br/><br/>
+			Example:
+		</p>
+		<pre>
+$(document).ready(function() {
+	$("body").iealert();
+});</pre>
+
+
+		<p>If you done everything exactly as it was written you can test your website with Internet Explorer 8,7,6  and you will see the modal box appear.
+		</p>  
+
+
+		<hr>
+		
+		<h3 id="options"><strong>E) Options</strong> - <a href="#toc">top</a></h3>
+		
+		<p>The IE Alert plugin accepts 6 options: <strong>support</strong>, <strong>title</strong>, <strong>text</strong>, <strong>upgradeTitle</strong>, <strong>upgradeLink</strong>, <strong>overlayClose</strong></p>
+
+		<p><strong style="font-size: 16px;">&minus; The support option</strong></p>
+		<p><strong>The <i>support</i> option defines on which version of Internet Explorer will the modal box appear.</strong><br/>
+		The <i>support</i> option accepts 4 parameters:</p>
+		<p><strong>ie9 </strong>- The modal box will appear on Internet Explorer 9,8,7,6.</p>
+		<p><strong>ie8 </strong>- The modal box will appear on Internet Explorer 8,7,6.</p>
+		<p><strong>ie7 </strong>- The modal box will appear on Internet Explorer 7,6.</p>
+		<p><strong>ie6 </strong>- The modal box will appear on Internet Explorer 6.</p>
+		<p>By default it's set to <i>ie8</i>.</p>
+
+		<p>Example codes:</p>
+		<pre>
+		$("body").iealert({ support: "ie9" });</pre>
+		<p>The modal box will appear on Internet Explorer 9,8,7,6</p>
+		<br/>
+		<pre>
+		$("body").iealert({ support: "ie8" });</pre>
+		<p>The modal box will appear on Internet Explorer 8,7,6</p>
+		<br/>
+
+		<pre>
+		$("body").iealert({ support: "ie7" });</pre>
+		<p>The modal box will appear on Internet Explorer 7,6</p>
+		<br/>
+
+		<pre>
+		$("body").iealert({ support: "ie6" });</pre>
+		<p>The modal box will appear <strong>only</strong> on Internet Explorer 6</p>
+<br/>
+<br/>
+
+<p><strong style="font-size: 16px;">&minus; The title option</strong></p>
+<p><strong>The <i>title</i> option specifies the title text, by default its: "Did you know that your Internet Explorer is out of date ?" . </strong>You can modify this text to whatever you want.</p>
+	<img src="assets/images/alert_window_title.jpg" alt="IE Alert" />
+	<p>The title 
+</p>
+		<p>example code:</p>
+		<pre>
+		$("body").iealert({ title: "your browser is old!" });</pre>
+		<br/>
+		<img src="assets/images/alert_window_title_change.jpg" alt="IE Alert" />
+		<p>The title text after the change.</p>
+		<br/>
+		<br/>
+<p><strong style="font-size: 16px;">&minus; The text option</strong></p>
+<p><strong>The <i>text</i> option specifies the text what is under the title text, by default its: "To get the best possible experience using our site we recommend that you upgrade ..."</strong>. You can modify this text to whatever you want.</p>
+	<img src="assets/images/alert_window_text.jpg" alt="IE Alert" />
+	<p>The text 
+</p>
+		<p>example code:</p>
+		<pre>
+		$("body").iealert({ text: "Please, update your browser." });</pre>
+		<br/>
+		<img src="assets/images/alert_window_text_change.jpg" alt="IE Alert" />
+		<p>The text after the change.</p>
+		<br/>
+		<p>Note, the text parameter accepts HTML tags like the <a href="http://www.w3schools.com/tags/tag_font.asp"> HTML font tag</a>
+		. So you can style the text like this:</p>
+<pre>
+		$("body").iealert({ text: "Please, &lt;font color="red">update&lt;/font> your browser" });</pre>
+		<p>The output will be:</p>
+		<img src="assets/images/alert_window_text_change_font.jpg" alt="IE Alert" />
+<br/>
+<br/>
+
+        <p><strong style="font-size: 16px;">&minus; upgradeTitle</strong></p>
+        <p><strong>The <i>upgradeTitle</i> option specifies the title text inside the upgrade button, by default its: "Upgrade" . </strong>You can modify this text to whatever you want.</p>
+	<img src="assets/images/alert_window_upgrade_text.jpg" alt="IE Alert" />
+	<p>The title 
+</p>
+		<p>example code:</p>
+		<pre>
+		$("body").iealert({ upgradeTitle: "Download" });</pre>
+		<br/>
+		<img src="assets/images/alert_window_upgrade_text_change.jpg" alt="IE Alert" />
+		<p>The upgrade text after the change.</p>
+		<br/>
+		<br/>
+
+        <p><strong style="font-size: 16px;">&minus; upgradeLink</strong></p>
+        <p><strong>The <i>overlayClose</i> option specifies the URL where the user will be sent when he clicks the <i>Upgrade</i> button, by default its pointing to: "http://www.google.com/chrome/". </strong>You can modify this URL to whatever you want.</p>
+	<img src="assets/images/alert_window_link.png" alt="IE Alert" />
+	<p>The URL 
+</p>
+		<p>example code:</p>
+		<pre>
+		$("body").iealert({ upgradeLink: "http://www.mozilla.org/en-US/firefox/new/" });</pre>
+		<br/>
+		<img src="assets/images/alert_window_link_change.png" alt="IE Alert" />
+		<p>The upgrade URL after the change.</p>
+		<br/>
+		<br/>
+		<p><strong style="font-size: 16px;">&minus; overlayClose</strong></p>
+        <p><strong>Optionally you can close the modal box by clicking the overlay, the <i>overlayClose</i> option specifies this option. By default its turned off (false) but if you want you can turn in on with the <i>true</i> parameter.</strong></p>
+		<p>example code:</p>
+		<pre>
+		$("body").iealert({ overlayClose: true });</pre>
+		<br/>
+		<img src="assets/images/alert_window_overlay.jpg" alt="IE Alert" />
+		<p>The red background shows what is considered <i>overlay</i>.</p>
+		<br/>
+		<br/>
+		<hr>
+
+		<h3 id="issues"><strong>F) Known issues</strong> - <a href="#toc">top</a></h3>
+		
+		<p>IE Alert has some known issues, but these are <strong>not</strong> major issues and they are <strong>IE6</strong> related:</p>
+		<strong>1. Different overlay for IE6</strong>
+		<p>Sadly Internet Explorer 6 doesn't support the PNG file format thats why I had to make different overlay for IE6 browsers. The overlay looks the following on IE6 browsers:</p>
+		<img src="assets/images/alert_window_ie6.jpg" alt="IE Alert" width="400px" height="220px" />
+		<br/>
+		<strong>2. Hover effect doesn't work on IE6</strong>
+		<p>Sadly Internet Explorer 6 doesn't support :hover state on divs. What this means is when somebody wants to close the modal box he will not see the hover statement for the close button, but the close function will work.</p>
+
+		<br/>
+
+		<p>If you found a good solution for these issues please contact me.</p>
+		
+		<hr>
+		
+
+		<h3 id="license"><strong>G) Credits, Source and License</strong> - <a href="#toc">top</a></h3>
+		
+		<p>The modal box design was inspired by a PSD freebie made by <a href="http://www.designdeck.co.uk/">design deck</a>. Check out their site on <a href="http://www.designdeck.co.uk/">www.designdeck.co.uk</a> for free PSD files.</p>
+
+		<p>The IE Alert plugin was made by <a href="http://nmsdvid.com">David Nemes</a>.</p>
+
+		<p><strong>License:</strong> You can use it on any project without any restriction. </p>
+		
+		<hr>
+		
+		<p class="append-bottom alt large"><strong><a href="https://twitter.com/nmsdvid">@nmsdvid</a>|<a href="http://nmsdvid.com/iealert/">IE Alert homepage</a></strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
