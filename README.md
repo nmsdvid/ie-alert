@@ -5,9 +5,8 @@
 <p>You should use it when you created a stunning modern website that looks and works amazing in modern browsers and you don't want to waste your time and money to make it work on legacy browsers like IE6, IE7 and IE8.</p>
 
 <h4>Example</h4>
+<p>Demo - <a href="http://nmsdvid.com/iealert/example/index.html" title="ie alert example">http://nmsdvid.com/iealert/example/</a></p>
 <p>Homepage - <a href="http://nmsdvid.com/iealert/" title="ie alert homepage">http://nmsdvid.com/iealert/</a></p>
-<p>2. Include the required files between your HTML documents &lt;head> section </p>
-<p>3. Initialise the plugin like this: <code>$("body").iealert();</code></p>
 
 <h4>Usage</h4>
 <p>1. Download the plugin </p>
