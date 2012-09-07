@@ -8,4 +8,4 @@
 <p>1. Download the plugin </p>
 <p>2. Include the required files between your HTML documents &lt;head> section </p>
 <p>3. Initialise the plugin like this:</p>
-<p>$("body").iealert();</p>
+<div style="background:gray"><p>$("body").iealert();</p></div>
