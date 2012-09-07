@@ -3,3 +3,11 @@
 
 <h5>When should I use it?</h5>
 <p>You should use it when you created a stunning modern website that looks and works amazing in modern browsers and you don't want to waste your time and money to make it work on legacy browsers like IE6, IE7 and IE8.</p>
+<br/>
+
+<h5>Usage</h5>
+<ul>
+	<li>1. Download the plugin </li>
+	<li>2. Include the required files between your HTML documents <head> section </li>
+	<li>3. Initialise the plugin like this:</li>
+</ul>
