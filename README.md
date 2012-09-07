@@ -8,3 +8,6 @@
 <p>1. Download the plugin </p>
 <p>2. Include the required files between your HTML documents &lt;head> section </p>
 <p>3. Initialise the plugin like this: <code>$("body").iealert();</code></p>
+
+<h5>License</h5>
+<p>You can use it on any project without any restriction.</p>
