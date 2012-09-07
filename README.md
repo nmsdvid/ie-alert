@@ -5,7 +5,7 @@
 <p>You should use it when you created a stunning modern website that looks and works amazing in modern browsers and you don't want to waste your time and money to make it work on legacy browsers like IE6, IE7 and IE8.</p>
 
 <h5>Usage</h5>
-<p>1. Download the plugin </br>
-2. Include the required files between your HTML documents &lt;head> section</br>
-3. Initialise the plugin like this:</p>
+<p>1. Download the plugin </p>
+<p>2. Include the required files between your HTML documents &lt;head> section </p>
+<p>3. Initialise the plugin like this:</p>
 <p>$("body").iealert();</p>
