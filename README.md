@@ -7,5 +7,4 @@
 <h5>Usage</h5>
 <p>1. Download the plugin </p>
 <p>2. Include the required files between your HTML documents &lt;head> section </p>
-<p>3. Initialise the plugin like this:</p>
-<div style="background:gray"><p>$("body").iealert();</p></div>
+<p>3. Initialise the plugin like this: <span style='font-weight:bold;'>$("body").iealert();</span></p>
