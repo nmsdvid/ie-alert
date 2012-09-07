@@ -1,0 +1,234 @@
+/* CSS styles for IE Alert plugin */
+
+/*
+	Overlay Background
+*/
+
+#ie-alert-overlay {
+    width:100%;
+    height:100%;
+    background-image:url(bg.png);
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 999999;
+}
+
+* html #ie-alert-overlay {   /* fixed position hack for IE6 */
+    position: absolute;
+	
+}
+
+/*
+	Modal Box
+*/
+
+#ie-alert-panel {
+    width: 600px;
+    height:auto;
+    top:200px;
+    left:50%;
+    position: fixed;
+    z-index:1000001;
+    margin:0 0 0 -300px;
+    _position:absolute;  /* fixed position hack for IE6 */
+    _top:expression(200+((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+'px');  /* top property hack for IE6 */
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.ie-p {
+    font-size: 15px;
+    color: #565656;
+    line-height: 1.6em;
+    text-align:left
+}
+
+#ie-alert-panel a {
+    text-decoration: none;
+}
+
+
+.ie-span {
+    font-size: 18px;
+    color: #464646;
+    display: block;
+    font-weight: bold;
+    line-height: 1.6em;
+    margin:0 0 15px 0;
+}
+
+/* sprites */
+
+.ie-r-b-c, .ie-r-t-c, .ie-l-t-c, .ie-l-b-c {
+    background: url(iesprites.png) no-repeat;
+}
+
+/* left */
+
+.ie-l-t-c {
+    width: 47px;
+    height: 47px;
+    background-position: -18px -9px ;
+    float: left;
+}
+
+.ie-l {
+    height: 100%;
+    width: 47px;
+    float: left;
+    clear: both;
+    background: url(left.png);
+}
+
+/* bottom */
+
+.ie-l-b-c {
+    width: 47px;
+    height: 46px;
+    background-position: -17px -66px;
+    float: left;
+    clear: both;
+}
+
+.ie-b {
+    height: 46px;
+    width: 506px;
+    float: left;
+    background: url(bottom.png);
+}
+
+/* right */
+
+.ie-r-t-c {
+    width: 47px;
+    height: 47px;
+    background-position: -83px -10px;
+    float: right;
+    cursor: pointer;
+}
+
+    
+.ie-r-t-c:hover {
+    background-position: -143px -9px ;
+}
+
+
+.ie-r {
+    height: 100%;
+    width: 47px;
+    float: right;
+    background: url(right.png);
+}
+
+/* center */
+
+.ie-c {
+    width: 506px;
+    height: 100%;
+    background: #f6f6f6;
+    float: left;
+}
+
+
+.ie-r-b-c {
+    width: 47px;
+    height: 46px;
+    background-position: -83px -65px ;
+    float: right;
+}
+
+/* top */
+
+.ie-t {
+    height: 47px;
+    width: 506px;
+    float: left;
+    background: url(top.png);
+}
+
+
+/* update button */
+
+.ie-u {
+    width: auto;
+    height: 43px;
+    margin: 30px auto 0 -66px;
+    position: relative;
+    left:50%;
+}
+
+
+    .ie-u-l {
+        width: 14px;
+        height: 43px;
+        background:url(u-left.png); 
+        float: left;
+    }
+
+    .ie-u-c {
+        width: auto;
+        height: 33px;
+        background:url(u-center.png); 
+        float: left;
+        padding: 11px 0 0 0;
+        cursor: pointer;
+    }
+
+        .ie-u-s {
+            margin: 5px 25px 5px 25px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+	    line-height:1.3em;
+        }
+
+    .ie-u-r {
+        width: 14px;
+        height: 43px;
+        background:url(u-right.png); 
+        float: left;
+    }
+
+/* images for IE6 */
+
+#ie-alert-panel.ie6-style .ie-r-b-c{
+    background: url(6_r_b_c.png) no-repeat;
+}
+
+#ie-alert-panel.ie6-style .ie-r-t-c{
+    background: url(6_r_t_c.png) no-repeat;
+}
+
+#ie-alert-panel.ie6-style .ie-r-t-c:hover{
+    background: url(6_r_t_c_h.png) no-repeat;
+}
+
+#ie-alert-panel.ie6-style .ie-l-t-c{
+    background: url(6_l_t_c.png) no-repeat;
+}
+
+#ie-alert-panel.ie6-style .ie-l-b-c{
+    background: url(6_l_b_c.png) no-repeat;
+}
+
+#ie-alert-panel.ie6-style .ie-l {
+    background: url(6_left.png);
+}
+
+#ie-alert-panel.ie6-style .ie-r {
+    background: url(6_right.png);
+}
+
+#ie-alert-panel.ie6-style .ie-b {
+    background: url(6_bottom.png);
+}
+
+#ie-alert-panel.ie6-style .ie-t {
+    background: url(6_top.png);
+}
+
+
+
+
+
+
