@@ -8,6 +8,6 @@
 <h5>Usage</h5>
 <ul>
 	<li>1. Download the plugin </li>
-	<li>2. Include the required files between your HTML documents <head> section </li>
+	<li>2. Include the required files between your HTML documents &lt;head> section </li>
 	<li>3. Initialise the plugin like this:</li>
 </ul>
