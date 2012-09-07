@@ -9,5 +9,9 @@
 <p>2. Include the required files between your HTML documents &lt;head> section </p>
 <p>3. Initialise the plugin like this: <code>$("body").iealert();</code></p>
 
+<h5>Documentation</h5>
+<p>Detailed documentation is included in the zip file.</p>
+
+
 <h5>License</h5>
 <p>You can use it on any project without any restriction.</p>
