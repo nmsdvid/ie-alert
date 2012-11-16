@@ -6,7 +6,8 @@
  */
 
 (function ($) {
-    function initialize($obj, support, title, text, upgradeTitle, upgradeLink, overlayClose, closeBtn) {
+    function initialize($obj, support, title, text, upgradeTitle, upgradeLink, overlayClose) {
+
         var panel = "<div class='ie-l-t-c'></div>"
             + "<div class='ie-t'></div>"
             + "<div class='ie-r-t-c'></div>"
@@ -47,19 +48,11 @@
             $('.ie-u').css('margin-left', -(uWidth / 2 + 14));
             var iePanel = $('#ie-alert-panel');
             var ieOverlay = $('#ie-alert-overlay');
-            var ieBtn = $(".ie-r-t-c");
 
-            if (closeBtn === false) {
-                ieBtn.css('background-position', '-145px -58px');
-                ieBtn.click(function (e) {
-                   e.preventDefault();
-                });
-            } else {
-                ieBtn.click(function () {
-                    iePanel.fadeOut(100);
-                    ieOverlay.fadeOut("slow");
-                });
-            }
+            $(".ie-r-t-c").click(function () {
+                iePanel.fadeOut(100);
+                ieOverlay.fadeOut("slow");
+            });
 
             if (overlayClose === true) {
                 ieOverlay.click(function () {
@@ -69,27 +62,46 @@
             }
 
             if ($.browser.msie && parseInt($.browser.version, 10) === 6) {
+
                 iepanel.addClass("ie6-style");
                 overlay.css("background", "#d6d6d6");
                 $obj.css("margin", "0");
+
             }
         }
 
-        if (support === "ie9") {            // the modal box will appear on IE9, IE8, IE7, IE6
+
+        if (support === "ie9") {             // the modal box will appear on IE9, IE8, IE7, IE6
+
             if ($.browser.msie && parseInt($.browser.version, 10) < 10) {
+
                 active();
+
             }
-        } else if (support === "ie8") {     // the modal box will appear on IE8, IE7, IE6
+
+
+        } else if (support === "ie8") {             // the modal box will appear on IE8, IE7, IE6
+
             if ($.browser.msie && parseInt($.browser.version, 10) < 9) {
+
                 active();
+
             }
+
         } else if (support === "ie7") {     // the modal box will appear on IE7, IE6
+
             if ($.browser.msie && parseInt($.browser.version, 10) < 8) {
+
                 active();
             }
+
+
         } else if (support === "ie6") {     // the modal box will appear only on IE6
+
             if ($.browser.msie && parseInt($.browser.version, 10) < 7) {
+
                 active();
+
             }
         }
 
@@ -97,23 +109,24 @@
 
     ; //end initialize function
 
+
     $.fn.iealert = function (options) {
         var defaults = {
             support:"ie8",
-            title:"Did you know that your Internet Explorer is out of date?",
+            title:"Did you know that your Internet Explorer is out of date ?",
             text:"To get the best possible experience using our site we recommend that you upgrade to a modern web browser. To download a newer web browser click on the Upgrade button.",
             upgradeTitle:"Upgrade",
-            upgradeLink:"http://browsehappy.com/",
-            overlayClose:false,
-            closeBtn: true
+            upgradeLink:"http://www.google.com/chrome/",
+            overlayClose:false
         };
+
 
         var option = $.extend(defaults, options);
 
         return this.each(function () {
             if ($.browser.msie) {
                 var $this = $(this);
-                initialize($this, option.support, option.title, option.text, option.upgradeTitle, option.upgradeLink, option.overlayClose, option.closeBtn);
+                initialize($this, option.support, option.title, option.text, option.upgradeTitle, option.upgradeLink, option.overlayClose);
             } // If browser is Internet Explorer
         });
 

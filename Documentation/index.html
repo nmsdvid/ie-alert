@@ -27,11 +27,11 @@
 
 <body>
 	<div class="container">
-
+	
 		<h3 class="center alt">IE Alert! plugin v2.0</h3>
-
+		
 		<hr>
-
+		
 		<h2 id="toc" class="alt">Table of Contents</h2>
 		<ol class="alpha">
 			<li><a href="#about">About the plugin</a></li>
@@ -48,9 +48,9 @@
 
 		<h3 id="about"><strong>A) About the plugin</strong> - <a href="#toc">top</a></h3>
 		<p>IE Alert is a handy jQuery plugin that shows a well designed modal box to the visitor who's trying to view your site with an older version of Internet Explorer browser, this modal box will convince your visitors to upgrade their browser to a newer version of Internet Explorer or to an another web browser.</p>
-
+		
 		<img src="assets/images/alert_window.jpg" alt="IE Alert" />
-
+		
 		<p>This message will appear if your visitor is using an older version of Internet Explorer</p>
 
 
@@ -64,10 +64,10 @@
 		</p>
 
 		<hr>
-
+		
 		<h3 id="start"><strong>C) Getting started</strong> - <a href="#toc">top</a></h3>
 
-
+		
 		<strong>Folder Structure</strong>
 
 		<p>When you unzip the downloaded file the folder structure looks the following:</p>
@@ -117,7 +117,7 @@ Please note, that the style.css file must be in the same folder where the images
 
  &lt;/head>
  &lt;body>
-
+  
  &lt;/body>
 &lt;/html>
 </pre>
@@ -125,9 +125,9 @@ Please note, that the style.css file must be in the same folder where the images
 
 		<h3 id="using"><strong>D) Using the plugin</strong> - <a href="#toc">top</a></h3>
 
-		<p>If you included all the required files (see Getting started > First step) you only need to "call" the plugin. We "call" the plugin with this line:</p>
+		<p>If you included all the required files (see Getting started > First step) you only need to "call" the plugin. We "call" the plugin with this line:</p> 
 		<pre>
-$("body").iealert();</pre>
+$("body").iealert();</pre> 
 
 		<p>
 			Just copy this code and paste it into a jQuery $(document).ready() function. (more about the <a href="http://docs.jquery.com/Tutorials:Introducing_$(document).ready()">jQuery $(document).ready() function</a>)<br/><br/>
@@ -140,13 +140,13 @@ $(document).ready(function() {
 
 
 		<p>If you done everything exactly as it was written you can test your website with Internet Explorer 8,7,6  and you will see the modal box appear.
-		</p>
+		</p>  
 
 
 		<hr>
-
+		
 		<h3 id="options"><strong>E) Options</strong> - <a href="#toc">top</a></h3>
-
+		
 		<p>The IE Alert plugin accepts 6 options: <strong>support</strong>, <strong>title</strong>, <strong>text</strong>, <strong>upgradeTitle</strong>, <strong>upgradeLink</strong>, <strong>overlayClose</strong></p>
 
 		<p><strong style="font-size: 16px;">&minus; The support option</strong></p>
@@ -182,7 +182,7 @@ $(document).ready(function() {
 <p><strong style="font-size: 16px;">&minus; The title option</strong></p>
 <p><strong>The <i>title</i> option specifies the title text, by default its: "Did you know that your Internet Explorer is out of date ?" . </strong>You can modify this text to whatever you want.</p>
 	<img src="assets/images/alert_window_title.jpg" alt="IE Alert" />
-	<p>The title
+	<p>The title 
 </p>
 		<p>example code:</p>
 		<pre>
@@ -195,7 +195,7 @@ $(document).ready(function() {
 <p><strong style="font-size: 16px;">&minus; The text option</strong></p>
 <p><strong>The <i>text</i> option specifies the text what is under the title text, by default its: "To get the best possible experience using our site we recommend that you upgrade ..."</strong>. You can modify this text to whatever you want.</p>
 	<img src="assets/images/alert_window_text.jpg" alt="IE Alert" />
-	<p>The text
+	<p>The text 
 </p>
 		<p>example code:</p>
 		<pre>
@@ -216,7 +216,7 @@ $(document).ready(function() {
         <p><strong style="font-size: 16px;">&minus; upgradeTitle</strong></p>
         <p><strong>The <i>upgradeTitle</i> option specifies the title text inside the upgrade button, by default its: "Upgrade" . </strong>You can modify this text to whatever you want.</p>
 	<img src="assets/images/alert_window_upgrade_text.jpg" alt="IE Alert" />
-	<p>The title
+	<p>The title 
 </p>
 		<p>example code:</p>
 		<pre>
@@ -228,9 +228,10 @@ $(document).ready(function() {
 		<br/>
 
         <p><strong style="font-size: 16px;">&minus; upgradeLink</strong></p>
-        <p><strong>The <i>upgradeLink</i> option specifies the URL where the user will be sent when he clicks the <i>Upgrade</i> button, by default its pointing to: "http://www.google.com/chrome/". </strong>You can modify this URL to whatever you want.</p>
-		<img src="assets/images/alert_window_link.png" alt="IE Alert" />
-		<p>The URL </p>
+        <p><strong>The <i>overlayClose</i> option specifies the URL where the user will be sent when he clicks the <i>Upgrade</i> button, by default its pointing to: "http://www.google.com/chrome/". </strong>You can modify this URL to whatever you want.</p>
+	<img src="assets/images/alert_window_link.png" alt="IE Alert" />
+	<p>The URL 
+</p>
 		<p>example code:</p>
 		<pre>
 		$("body").iealert({ upgradeLink: "http://www.mozilla.org/en-US/firefox/new/" });</pre>
@@ -249,20 +250,10 @@ $(document).ready(function() {
 		<p>The red background shows what is considered <i>overlay</i>.</p>
 		<br/>
 		<br/>
-
-		<p><strong style="font-size: 16px;">&minus; closeBtn</strong></p>
-		<p>The <i>closeBtn</i> option whether or not to display a close button for the modal box. By default, the plugin shows the close button allowing the user to continue on with using the site after being shown the modal box.</p>
-		<p>Example code:</p>
-		<pre>
-		$("body").iealert({ closeBtn: false });</pre>
-		<br/>
-		<img src="assets/images/alert_window_no_close.jpg" alt="IE Alert" />
-		<br/>
-		<br/>
 		<hr>
 
 		<h3 id="issues"><strong>F) Known issues</strong> - <a href="#toc">top</a></h3>
-
+		
 		<p>IE Alert has some known issues, but these are <strong>not</strong> major issues and they are <strong>IE6</strong> related:</p>
 		<strong>1. Different overlay for IE6</strong>
 		<p>Sadly Internet Explorer 6 doesn't support the PNG file format thats why I had to make different overlay for IE6 browsers. The overlay looks the following on IE6 browsers:</p>
@@ -274,23 +265,23 @@ $(document).ready(function() {
 		<br/>
 
 		<p>If you found a good solution for these issues please contact me.</p>
-
+		
 		<hr>
-
+		
 
 		<h3 id="license"><strong>G) Credits, Source and License</strong> - <a href="#toc">top</a></h3>
-
+		
 		<p>The modal box design was inspired by a PSD freebie made by <a href="http://www.designdeck.co.uk/">design deck</a>. Check out their site on <a href="http://www.designdeck.co.uk/">www.designdeck.co.uk</a> for free PSD files.</p>
 
 		<p>The IE Alert plugin was made by <a href="http://nmsdvid.com">David Nemes</a>.</p>
 
 		<p><strong>License:</strong> You can use it on any project without any restriction. </p>
-
+		
 		<hr>
-
+		
 		<p class="append-bottom alt large"><strong><a href="https://twitter.com/nmsdvid">@nmsdvid</a>|<a href="http://nmsdvid.com/iealert/">IE Alert homepage</a></strong></p>
 		<p><a href="#toc">Go To Table of Contents</a></p>
-
+		
 		<hr class="space">
 	</div><!-- end div .container -->
 </body>
