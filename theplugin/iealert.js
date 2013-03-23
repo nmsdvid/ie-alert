@@ -1,12 +1,14 @@
 /*
  * IE Alert! jQuery plugin
- * Version 2
+ * Version 2.1
  * Author: David Nemes | @nmsdvid
  * http://nmsdvid.com/iealert/
  */
 
 (function ($) {
     function initialize($obj, support, title, text, upgradeTitle, upgradeLink, overlayClose, closeBtn) {
+    
+    
         var panel = "<div class='ie-l-t-c'></div>"
             + "<div class='ie-t'></div>"
             + "<div class='ie-r-t-c'></div>"
@@ -68,7 +70,7 @@
                 });
             }
 
-            if ($.browser.msie && parseInt($.browser.version, 10) === 6) {
+            if (ie === 6) {
                 iepanel.addClass("ie6-style");
                 overlay.css("background", "#d6d6d6");
                 $obj.css("margin", "0");
@@ -76,19 +78,19 @@
         }
 
         if (support === "ie9") {            // the modal box will appear on IE9, IE8, IE7, IE6
-            if ($.browser.msie && parseInt($.browser.version, 10) < 10) {
+            if (ie < 10) {
                 active();
             }
         } else if (support === "ie8") {     // the modal box will appear on IE8, IE7, IE6
-            if ($.browser.msie && parseInt($.browser.version, 10) < 9) {
+            if (ie < 9) {
                 active();
             }
         } else if (support === "ie7") {     // the modal box will appear on IE7, IE6
-            if ($.browser.msie && parseInt($.browser.version, 10) < 8) {
+            if (ie < 8) {
                 active();
             }
-        } else if (support === "ie6") {     // the modal box will appear only on IE6
-            if ($.browser.msie && parseInt($.browser.version, 10) < 7) {
+        } else if (support === "ie6") {     // the modal box will appear only on IE6 and below
+            if (ie < 7) {
                 active();
             }
         }
@@ -111,10 +113,29 @@
         var option = $.extend(defaults, options);
 
         return this.each(function () {
-            if ($.browser.msie) {
+        	
+	    	ie = (function(){
+	 
+			    var undef,
+			        v = 3,
+			        div = document.createElement('div'),
+			        all = div.getElementsByTagName('i');
+			    
+			    while (
+			        div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
+			        all[0]
+			    );
+			    
+			    return v > 4 ? v : undef;
+	    
+	    	 }());
+
+	    	 // If browser is Internet Explorer
+             if (ie >= 5) {
                 var $this = $(this);
                 initialize($this, option.support, option.title, option.text, option.upgradeTitle, option.upgradeLink, option.overlayClose, option.closeBtn);
-            } // If browser is Internet Explorer
+             }
+
         });
 
     };
