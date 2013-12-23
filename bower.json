@@ -1,0 +1,23 @@
+{
+  "name": "ie-alert",
+  "version": "1.0.0",
+  "homepage": "http://nmsdvid.com/iealert/",
+  "description": "IE Alert is a jQuery plugin that shows a well designed modal box to the visitor who's trying to view your site with an older version of Internet Explorer browser, this modal box encourages your visitors to upgrade their browser for a better experience using your site.",
+  "main": "theplugin/iealert.min.js",
+  "keywords": [
+    "iealert",
+    "iexplorer",
+    "alert",
+    "legacy",
+    "old",
+    "browser"
+  ],
+  "authors": [
+    "demodern <nmsdvid12@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "Documentation"
+  ]
+}
