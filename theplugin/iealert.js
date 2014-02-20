@@ -39,6 +39,17 @@
         overlay.css("height", docHeight);
 
         function active() {
+            // show this alert only once time
+            // Using jQuery cookie
+            // https://github.com/carhartl/jquery-cookie
+            if ($.cookie) {
+              if ($.cookie('iealerted') === 'y') {
+                return true
+              } else {
+                $.cookie('iealerted', 'y')
+              }
+            }
+
             $obj.prepend(iepanel);
             $obj.prepend(overlay);
 
